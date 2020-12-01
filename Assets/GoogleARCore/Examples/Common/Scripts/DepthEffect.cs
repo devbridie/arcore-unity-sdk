@@ -163,8 +163,8 @@ namespace GoogleARCore.Examples.Common
 
             _backgroundBuffer.SetGlobalTexture(
                 BackgroundTexturePropertyName, _backgroundTextureID);
-            _camera.AddCommandBuffer(CameraEvent.BeforeForwardOpaque, _backgroundBuffer);
-            _camera.AddCommandBuffer(CameraEvent.BeforeGBuffer, _backgroundBuffer);
+            _camera.AddCommandBuffer(CameraEvent.AfterForwardOpaque, _backgroundBuffer);
+            _camera.AddCommandBuffer(CameraEvent.AfterGBuffer, _backgroundBuffer);
         }
 
         /// <summary>
@@ -224,8 +224,8 @@ namespace GoogleARCore.Examples.Common
 
             if (_backgroundBuffer != null)
             {
-                _camera.RemoveCommandBuffer(CameraEvent.BeforeForwardOpaque, _backgroundBuffer);
-                _camera.RemoveCommandBuffer(CameraEvent.BeforeGBuffer, _backgroundBuffer);
+                _camera.RemoveCommandBuffer(CameraEvent.AfterForwardOpaque, _backgroundBuffer);
+                _camera.RemoveCommandBuffer(CameraEvent.AfterGBuffer, _backgroundBuffer);
             }
         }
 
